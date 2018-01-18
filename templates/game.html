@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  <title>Set up Game</title>
+</head>
+<body>
+    <form action="/madlib">
+        <p>Choose some words for your game below:</p>
+        <p>
+            Please enter the name of a celebrity:
+            <input type="text" name="person">
+        </p>
+        <p>
+            Please choose a color:
+            {% for color in colors %}
+                <input type="radio" name="color" value={{color}}>{{color.title()}}
+            {% endfor %}
+        </p>
+        <!-- add color input here -->
+        <p>
+            Please enter a noun:
+            <input type="text" name="noun">
+        </p>
+        
+        <p>
+            Please enter an adjective:
+            <input type="text" name="adjective">
+        </p>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>

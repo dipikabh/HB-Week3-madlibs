@@ -48,10 +48,11 @@ def show_madlib_form():
 
     game = request.args.get('game')
     colors = ["red", "black", "yellow"]
+    animals = ['cat', 'dog', 'cow', 'chicken', 'rabbit']
     person = request.args.get('person')
     if game == "yes":
         return render_template('game.html',
-                               colors=colors)
+                               colors=colors, animals=animals)
     else:
         return render_template('goodbye.html',
                                person=person)
@@ -65,9 +66,13 @@ def show_madlib():
     color = request.args.get('color')
     noun = request.args.get('noun')
     adjective = request.args.get('adjective')
+    animals = request.args.getlist('animals')
+
+    print animals[0]
+    print type(animals)
 
     return render_template('madlib.html', person=person, color=color,
-                           noun=noun, adjective=adjective)
+                           noun=noun, adjective=adjective, animals=animals)
 
 
 

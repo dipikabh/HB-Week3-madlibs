@@ -21,6 +21,10 @@
             Please enter a noun:
             <input type="text" name="noun">
         </p>
+            Choose the animals you like:
+            {% for animal in animals %}
+                <input type='checkbox' name='animals' value={{animal}}>{{animal.title()}}
+            {% endfor %}
         
         <p>
             Please enter an adjective:

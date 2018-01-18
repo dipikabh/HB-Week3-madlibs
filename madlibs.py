@@ -68,9 +68,6 @@ def show_madlib():
     adjective = request.args.get('adjective')
     animals = request.args.getlist('animals')
 
-    print animals[0]
-    print type(animals)
-
     return render_template('madlib.html', person=person, color=color,
                            noun=noun, adjective=adjective, animals=animals)
 

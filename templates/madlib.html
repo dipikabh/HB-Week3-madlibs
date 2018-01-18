@@ -6,9 +6,16 @@
 <body>
     <p>Here's your story:</p>
     <p>
-        There once was a {{ color }} {{ noun.lower() }} sitting in the Hackbright Lab.
-        When {{ person.title() }} went to pick it up, it burst into flames in a totally
-        {{ adjective.lower() }} way.
+        {% if animals|length == 0 %}
+            There once was a {{ color }} {{ noun.lower() }} sitting in the Hackbright
+            Lab. When {{ person.title() }} went to pick it up, it burst into flames in a totally {{ adjective.lower() }} way.
+        {% else %}
+
+            There once was a {{ color }} {{ noun.lower() }} sitting in the Hackbright Lab with a {{ animals[0] }}.
+            When {{ person.title() }} went to pick it up with a {{ animals[1] }} and some gloves, it burst into flames in a totally
+            {{ adjective.lower() }} {{ animals[2] }} way.  Then we had to call the {{ animals[3] }} fire department.  They came right away and even brought their baby {{ animals[4] }} and dino.
+        
+        {% endif %}
     </p>
 </body>
 </html>
